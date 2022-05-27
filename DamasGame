@@ -20,7 +20,7 @@
       "metadata": {
         "id": "JrSV2-f4oqXM"
       },
-      "execution_count": 84,
+      "execution_count": 22,
       "outputs": []
     },
     {
@@ -30,37 +30,21 @@
         "#Generacion del jugador numero 1\n",
         "  for x in range(3):\n",
         "    if(x%2 == 0):\n",
-        "      for y in range(3):\n",
+        "      for y in range(4):\n",
         "        table[x][(2*y)-1] = 1\n",
+        "        table[7-x][(2*y)] = 2\n",
         "    elif(x%2 == 1):\n",
-        "        for y in range(3):\n",
+        "        for y in range(4):\n",
         "          table[x][(2*y)] = 1\n",
+        "          table[7-x][(2*y)-1] = 2\n",
         "\n",
         "  return table"
       ],
       "metadata": {
         "id": "f_-30Vtyu7mX"
       },
-      "execution_count": 96,
+      "execution_count": 34,
       "outputs": []
-    },
-    {
-      "cell_type": "markdown",
-      "source": [
-        "\"\"\"\n",
-        "#Generacion del jugador numero 2\n",
-        "  for x in range(4):\n",
-        "    if(x%2 == 0):\n",
-        "      for y in range(4):\n",
-        "        table[x][y*2] = 1\n",
-        "    elif(x%2 == 1):\n",
-        "        for y in range(4):\n",
-        "          table[x][(2*y)-1] = 1 \n",
-        "\"\"\""
-      ],
-      "metadata": {
-        "id": "wPKwIWEc0Xr5"
-      }
     },
     {
       "cell_type": "code",
@@ -76,7 +60,7 @@
       "metadata": {
         "id": "v93XjT9ipTkj"
       },
-      "execution_count": 85,
+      "execution_count": 35,
       "outputs": []
     },
     {
@@ -90,9 +74,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "sFBPpbFop9b1",
-        "outputId": "46b30de5-1998-4f67-d73e-2979fd0b6456"
+        "outputId": "84ed069d-a349-4661-9eb3-af412a29bd0b"
       },
-      "execution_count": 98,
+      "execution_count": 36,
       "outputs": [
         {
           "output_type": "stream",
@@ -117,6 +101,16 @@
           ]
         }
       ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##Analisis:\n",
+        "Suponiendo que inicia la computadora (Valor numero 1) se tiene en cuenta que solo 4 fichas tienen para hacer 7 jugadas, despues de eso el jugador humano (Valor numero 2) tiene otras 7 jugadas, por lo cual la ramificacion va creciendo, esto sin contar que al mover una pieza dejara estando libre a otras fichas que se encuentran mas atras."
+      ],
+      "metadata": {
+        "id": "wKMnH0Eth2v4"
+      }
     },
     {
       "cell_type": "code",
@@ -129,29 +123,29 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "ROga9ja8zUFr",
-        "outputId": "7a57cf3b-c54f-499e-b5ca-aac980e45062"
+        "outputId": "952cde91-00ba-43aa-e950-707e01151326"
       },
-      "execution_count": 99,
+      "execution_count": 37,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
-            "0 1 0 1 0 0 0 1 \n",
+            "0 1 0 1 0 1 0 1 \n",
             "\n",
-            "1 0 1 0 1 0 0 0 \n",
+            "1 0 1 0 1 0 1 0 \n",
             "\n",
-            "0 1 0 1 0 0 0 1 \n",
-            "\n",
-            "0 0 0 0 0 0 0 0 \n",
+            "0 1 0 1 0 1 0 1 \n",
             "\n",
             "0 0 0 0 0 0 0 0 \n",
             "\n",
             "0 0 0 0 0 0 0 0 \n",
             "\n",
-            "0 0 0 0 0 0 0 0 \n",
+            "2 0 2 0 2 0 2 0 \n",
             "\n",
-            "0 0 0 0 0 0 0 0 \n",
+            "0 2 0 2 0 2 0 2 \n",
+            "\n",
+            "2 0 2 0 2 0 2 0 \n",
             "\n"
           ]
         }
@@ -163,7 +157,7 @@
         ""
       ],
       "metadata": {
-        "id": "1i1he-Vl62HB"
+        "id": "lcud1X7viO4R"
       },
       "execution_count": null,
       "outputs": []
