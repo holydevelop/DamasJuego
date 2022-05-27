@@ -1,0 +1,187 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/holydevelop/DamasJuego/blob/main/DamasGame\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def GenerarTablero():\n",
+        "  table = [[0 for i in range (8)]for j in range (8)]\n",
+        "  return table"
+      ],
+      "metadata": {
+        "id": "JrSV2-f4oqXM"
+      },
+      "execution_count": 84,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def GenerarFichas(table): #[X][Y] las coordenadas ACORDARSE\n",
+        "#Generacion del jugador numero 1\n",
+        "  for x in range(3):\n",
+        "    if(x%2 == 0):\n",
+        "      for y in range(3):\n",
+        "        table[x][(2*y)-1] = 1\n",
+        "    elif(x%2 == 1):\n",
+        "        for y in range(3):\n",
+        "          table[x][(2*y)] = 1\n",
+        "\n",
+        "  return table"
+      ],
+      "metadata": {
+        "id": "f_-30Vtyu7mX"
+      },
+      "execution_count": 96,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\"\"\"\n",
+        "#Generacion del jugador numero 2\n",
+        "  for x in range(4):\n",
+        "    if(x%2 == 0):\n",
+        "      for y in range(4):\n",
+        "        table[x][y*2] = 1\n",
+        "    elif(x%2 == 1):\n",
+        "        for y in range(4):\n",
+        "          table[x][(2*y)-1] = 1 \n",
+        "\"\"\""
+      ],
+      "metadata": {
+        "id": "wPKwIWEc0Xr5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def ImprimirTablero(table):\n",
+        "  for i in table:\n",
+        "    mensaje = \"\"\n",
+        "    for j in i:\n",
+        "      mensaje += str(j) + \" \"\n",
+        "    mensaje += \"\\n\"\n",
+        "    print(mensaje)"
+      ],
+      "metadata": {
+        "id": "v93XjT9ipTkj"
+      },
+      "execution_count": 85,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "table = GenerarTablero()\n",
+        "ImprimirTablero(table)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sFBPpbFop9b1",
+        "outputId": "46b30de5-1998-4f67-d73e-2979fd0b6456"
+      },
+      "execution_count": 98,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "table = GenerarFichas(table)\n",
+        "ImprimirTablero(table)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ROga9ja8zUFr",
+        "outputId": "7a57cf3b-c54f-499e-b5ca-aac980e45062"
+      },
+      "execution_count": 99,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 1 0 1 0 0 0 1 \n",
+            "\n",
+            "1 0 1 0 1 0 0 0 \n",
+            "\n",
+            "0 1 0 1 0 0 0 1 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n",
+            "0 0 0 0 0 0 0 0 \n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "1i1he-Vl62HB"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "collapsed_sections": [],
+      "name": "Te damos la bienvenida a Colaboratory",
+      "toc_visible": true,
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
